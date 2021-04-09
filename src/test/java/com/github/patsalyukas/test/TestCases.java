@@ -86,4 +86,10 @@ public class TestCases {
 
     }
 
+    @Test
+    public void testException() {
+        String s = null;
+        assertThrows(NullPointerException.class, () -> s.length(), "must be NPE");
+    }
+
 }

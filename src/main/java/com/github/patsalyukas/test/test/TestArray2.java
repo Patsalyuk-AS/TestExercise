@@ -1,3 +1,4 @@
+//возвращает количество подмассивов сумму элементов, которого меньше нуля
 package com.github.patsalyukas.test.test;
 
 import java.util.Arrays;
@@ -12,18 +13,18 @@ public class TestArray2 {
         int n = Integer.parseInt(scanner.nextLine());
         String str = scanner.nextLine();
         int a[] = Arrays.stream(str.split(" ")).mapToInt(Integer::parseInt).toArray();
-
+        int arr[] = null;
+        long sum = 0;
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++){
-                int arr[] = Arrays.copyOfRange(a, i, j);
+                arr = Arrays.copyOfRange(a, i, j + 1);
                 if (sumIntArraysMembers(arr) < 0) {
                     count++;
-                    System.out.println(arr);
                 }
             }
         }
         System.out.println(count);
-
+        scanner.close();
     }
 
     private static long sumIntArraysMembers(int array[]) {
