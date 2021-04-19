@@ -3,24 +3,15 @@ package com.github.patsalyukas.test;
 
 import java.lang.reflect.Method;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
 
     public static void main(String[] args) throws ClassNotFoundException{
-        Class student = Class.forName("com.github.patsalyukas.test.test.Student");
-        Method[] methods = student.getDeclaredMethods();
+        Stream<Integer> stream =  Arrays.asList(1, 2, 3, 5).stream();
+        Integer integer = stream.max(Comparator.comparingInt(Integer::intValue)).orElse(1);
 
-        ArrayList<String> methodList = new ArrayList<>();
-        for(Method method : methods){
-            methodList.add(method.getName());
-        }
-        Collections.sort(methodList);
-        for(String name: methodList){
-            System.out.println(name);
-        }
     }
 }
 
