@@ -19,9 +19,7 @@ public class Solution {
 
             testCases--;
         }
-        Collections.sort(studentList,
-                Comparator.comparingDouble(Student::getCgpa)
-                .thenComparing(Comparator.naturalOrder())
+        Collections.sort(studentList, Comparator.comparingDouble(Student::getCgpa).reversed()
             .thenComparing(Student::getFname)
             .thenComparingInt(Student::getId)
             );
