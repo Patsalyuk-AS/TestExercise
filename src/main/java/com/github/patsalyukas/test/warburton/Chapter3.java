@@ -21,4 +21,9 @@ public class Chapter3 {
         return albums.filter(e -> e.getTracks().size() > 2).collect(Collectors.toList());
     }
 
+    //2
+    public int totalOfArtists(List<Artist> artists) {
+        return artists.stream().mapToInt(artist -> artist.getMember().size()).sum();
+    }
+
 }

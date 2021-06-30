@@ -47,7 +47,17 @@ class Chapter3Test {
         Album album4 = new Album("album4", tracksWith4Songs, null);
         List<Album> list = cp3.albumWithThreeAndMoreTracks(Stream.of(album1, album2, album3, album4));
         assertEquals(2, cp3.albumWithThreeAndMoreTracks(Stream.of(album1, album2, album3, album4)).size());
+    }
 
-
+    @Test
+    void totalOfArtists() {
+        Artist artist1 = new Artist("Madonna", "USA");
+        Artist artist2 = new Artist("Vera Brezhneva", "Russia");
+        Artist artist3 = new Artist("John Lennon", new HashSet<>(), "UK");
+        List<Artist> artists = new ArrayList<>();
+        artists.add(artist1);
+        artists.add(artist2);
+        artists.add(artist3);
+        assertEquals(3, cp3.totalOfArtists(artists));
     }
 }
